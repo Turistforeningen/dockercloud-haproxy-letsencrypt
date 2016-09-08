@@ -1,0 +1,28 @@
+haproxy:
+  image: turistforeningen/dockercloud-haproxy:latest
+  links:
+    - letsencrypt
+  ports:
+    - "80:80"
+    - "443:443"
+    - "9000:9000"
+  volumes_from:
+    - letsencrypt
+  environment:
+    EXTRA_GLOBAL_SETTINGS: "tune.ssl.cachesize 20000, tune.ssl.default-dh-param 2048"
+    SSL_BIND_OPTIONS: "no-sslv3 no-tls-tickets"
+    STATS_PORT: "9000"
+  tags:
+    - gateway
+  roles:
+    - global
+  autorestart: always
+  autoredeploy: true
+
+letsencrypt:
+  image: turistforeningen/dockercloud-letsencrypt:latest
+  environment:
+    EMAIL: "tekno@dnt.no"
+    DOMAINS: "www.dnt.no"
+  autorestart: always
+  autoredeploy: true
