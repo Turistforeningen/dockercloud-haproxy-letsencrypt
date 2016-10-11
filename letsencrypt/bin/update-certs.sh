@@ -2,6 +2,8 @@
 
 set -e
 
+STDOUT=/proc/1/fd/1
+
 # The certbot standalone plugin returns 503 errors. Perhaps because some time
 # is needed after starting before HAproxy can detect it. So run our own web
 # server and use the webroot plugin.
@@ -25,5 +27,6 @@ for DOMAINS in "${CERTS[@]}"; do
         --noninteractive \
         --webroot \
         --webroot-path /opt/www \
-        $OPTIONS || true
+        $OPTIONS || true \
+        > ${STDOUT}
 done
