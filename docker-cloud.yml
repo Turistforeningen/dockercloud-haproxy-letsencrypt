@@ -2,6 +2,10 @@ haproxy:
   image: turistforeningen/dockercloud-haproxy:latest
   links:
     - letsencrypt
+    - 'verdandi-mongoclient.verdandi:verdandi-mongoclient'
+    - 'verdandi-node-v2.verdandi:verdandi-node-v2'
+    - 'sherpa.sherpa:sherpa'
+    - 'facebook-apps.facebook-apps:facebook-apps'
   ports:
     - "80:80"
     - "443:443"
