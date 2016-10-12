@@ -27,6 +27,6 @@ letsencrypt:
   image: turistforeningen/dockercloud-letsencrypt:latest
   environment:
     EMAIL: "tekno@dnt.no"
-    DOMAINS: "www.dnt.no;sjekkut.app2.dnt.no,verdandi-db.app2.dnt.no;facebook-apps.app.dnt.no"
+    DOMAINS: "www.dnt.no;sjekkut.app.dnt.no,verdandi-db.app2.dnt.no;facebook-apps.app.dnt.no"
   autorestart: always
   autoredeploy: true
