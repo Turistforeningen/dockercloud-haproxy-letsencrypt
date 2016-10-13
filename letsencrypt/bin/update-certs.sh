@@ -27,6 +27,7 @@ for DOMAINS in "${CERTS[@]}"; do
         --noninteractive \
         --webroot \
         --webroot-path /opt/www \
-        $OPTIONS || true \
-        > ${STDOUT}
+        ${OPTIONS} \
+        > ${STDOUT} \
+        || true
 done
