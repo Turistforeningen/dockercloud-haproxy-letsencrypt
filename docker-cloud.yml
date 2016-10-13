@@ -1,5 +1,5 @@
 haproxy:
-  image: turistforeningen/dockercloud-haproxy:latest
+  image: turistforeningen/dockercloud-haproxy-letsencrypt:haproxy
   links:
     - letsencrypt
     - 'verdandi-node-v2.verdandi:verdandi-node-v2'
@@ -23,7 +23,7 @@ haproxy:
   autoredeploy: true
 
 letsencrypt:
-  image: turistforeningen/dockercloud-letsencrypt:latest
+  image: turistforeningen/dockercloud-haproxy-letsencrypt:letsencrypt
   environment:
     EMAIL: "tekno@dnt.no"
     DOMAINS: "www.dnt.no;sjekkut.app.dnt.no;facebook-apps.app.dnt.no"
