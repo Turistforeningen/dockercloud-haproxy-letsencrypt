@@ -3,7 +3,7 @@ haproxy:
   links:
     - letsencrypt
     - 'verdandi-node-v2.verdandi:verdandi-node-v2'
-    - 'sherpa.sherpa:sherpa'
+    - 'www.sherpa:www'
     - 'facebook-apps.facebook-apps:facebook-apps'
   ports:
     - "80:80"
