@@ -19,6 +19,7 @@ do
 
     # Create or renew certificates.
     for DOMAINS in "${CERTS[@]}"; do
+        echo "Renewing domain(s): ${DOMAINS} ..."
         certbot certonly \
             --agree-tos \
             --domains "$DOMAINS" \
