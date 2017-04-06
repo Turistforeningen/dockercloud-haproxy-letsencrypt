@@ -21,6 +21,6 @@ haproxy:
 letsencrypt:
   image: turistforeningen/dockercloud-haproxy-letsencrypt:letsencrypt
   environment:
-    EMAIL: "tekno@dnt.no"
-    DOMAINS: "www.dnt.no;sjekkut.app.dnt.no;facebook-apps.app.dnt.no"
+    EMAIL: ""
+    DOMAINS: ""
   autorestart: always
