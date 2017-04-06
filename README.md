@@ -2,7 +2,7 @@
 
 Combining [dockercloud-haproxy](https://github.com/docker/dockercloud-haproxy)
 and [certbot](https://certbot.eff.org/), these Docker Cloud services provide a
-default load balancer with simplified SSL certificate handling.
+default load balancer with simplified TLS certificate handling.
 
 This is more or less a clone of
 [ixc/letsencrypt-dockercloud-haproxy](https://github.com/ixc/letsencrypt-dockercloud-haproxy).
@@ -11,7 +11,7 @@ This is more or less a clone of
 
 * See [dockercloud-haproxy](https://github.com/docker/dockercloud-haproxy)
 * Add volume from `letsencrypt` service
-* Install SSL certificates and reload automatically on changes
+* Install TLS certificates and reload automatically on changes
 
 ## letsencrypt service
 
